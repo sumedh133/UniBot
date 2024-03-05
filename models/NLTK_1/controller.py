@@ -6,12 +6,13 @@ import random
 import json
 import pickle
 import nltk
+nltk.download('punkt')
 nltk.data.path.append(os.path.join(dir_path, 'packages'))
 from nltk.stem import WordNetLemmatizer
 lemmatizer = WordNetLemmatizer()
 
 model = load_model(os.path.join(dir_path, 'bin', 'model.h5'))
-intents = json.loads(open(os.path.join(dir_path, '../../data/intents.json')).read())
+intents = json.loads(open(os.path.join(dir_path, '../../data/augmented_intents.json')).read())
 words = pickle.load(open(os.path.join(dir_path, 'bin', 'words.pkl'),'rb'))
 classes = pickle.load(open(os.path.join(dir_path, 'bin', 'classes.pkl'),'rb'))
 
@@ -50,3 +51,18 @@ def get_response(text):
     ints = classify(text, model)
     res = respond(ints, intents)
     return res
+
+def chatbot_cli():
+    print("Chatbot is ready. Type 'exit' to end the conversation.")
+
+    while True:
+        user_input = input("You: ")
+        if user_input.lower() == 'exit':
+            print("Goodbye!")
+            break
+
+        response = get_response(user_input)
+        print("Bot:", response)
+
+if __name__ == "__main__":
+    chatbot_cli()
