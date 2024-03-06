@@ -30,7 +30,7 @@ def classify(sentence, model):
                 bag[i] = 1
     p = np.array([bag])
     res = model.predict(p)[0]
-    ERROR_THRESHOLD = 0.25
+    ERROR_THRESHOLD = 0.10
     results = [[i,r] for i,r in enumerate(res) if r>ERROR_THRESHOLD]
     results.sort(key=lambda x: x[1], reverse=True)
     return_list = []
