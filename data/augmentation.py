@@ -28,7 +28,7 @@ def augment_intent(intent):
     augmented_patterns = set()  # Use a set to store unique augmented patterns
 
     for original_pattern in intent['patterns']:
-        augmented_patterns.update(synonym_aug.augment(original_pattern, n=3))
+        augmented_patterns.update(synonym_aug.augment(original_pattern, n=1))
     
     return list(augmented_patterns)
 
