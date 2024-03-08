@@ -9,5 +9,5 @@ make a seperate apis at the end in main folder in .py files
 - [x] Simple NLTK
 - [ ] Context aware NLTK
 - [ ] RASA
-- [ ] BERT transformer
+- [x] BERT transformer
 - [ ] RAG
