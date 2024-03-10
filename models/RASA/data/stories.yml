@@ -1,0 +1,95 @@
+version: "3.1"
+
+stories:
+
+- story: name and work path
+  steps:
+  - intent: greeting
+  - action: utter_greeting
+  - intent: name
+  - action: utter_name
+  - intent: task
+  - action: utter_task
+  - intent: goodbye
+  - action: utter_goodbye
+
+- story: Course Information Inquiry
+  steps:
+    - intent: course
+    - action: utter_course
+
+- story: Admission Process Query
+  steps:
+    - intent: admission
+    - action: utter_admission
+
+- story: Hostel Details Request
+  steps:
+    - intent: hostel
+    - action: utter_hostel
+
+- story: Library and Infrastructure Inquiry
+  steps:
+    - intent: library
+    - action: utter_library
+
+- story: Placement Information Request
+  steps:
+    - intent: placement
+    - action: utter_placement
+
+- story: Random Query Handling
+  steps:
+    - intent: random
+    - action: utter_random
+
+- story: HOD Information Inquiry
+  steps:
+    - intent: ithod
+    - action: utter_ithod
+
+- story: Principal Information Inquiry
+  steps:
+    - intent: principal
+    - action: utter_principal
+
+- story: Academic Calendar Request
+  steps:
+    - intent: sem
+    - action: utter_sem
+
+- story: Scholarship Details Inquiry
+  steps:
+    - intent: scholarship
+    - action: utter_scholarship
+
+- story: Facilities Information Request
+  steps:
+    - intent: facilities
+    - action: utter_facilities
+
+- story: College Intake Inquiry
+  steps:
+    - intent: college intake
+    - action: utter_college_intake
+
+- story: Uniform Inquiry
+  steps:
+    - intent: uniform
+    - action: utter_uniform
+
+- story: Committee Information Request
+  steps:
+    - intent: committee
+    - action: utter_committee
+
+- story: Sports Facilities Inquiry
+  steps:
+    - intent: sports
+    - action: utter_sports
+
+- story: Ragging Policy
+  steps:
+    - intent: ragging
+    - action: utter_ragging
+

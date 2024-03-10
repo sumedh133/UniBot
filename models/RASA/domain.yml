@@ -1,0 +1,169 @@
+version: "3.1"
+
+intents:
+  - greeting
+  - goodbye
+  - creator
+  - name
+  - hours
+  - number
+  - course
+  - fees
+  - location
+  - hostel
+  - event
+  - document
+  - floors
+  - syllabus
+  - library
+  - infrastructure
+  - canteen
+  - menu
+  - placement
+  - ithod
+  - computerhod
+  - extchod
+  - principal
+  - sem
+  - admission
+  - scholarship
+  - facilities
+  - college intake
+  - uniform
+  - committee
+  - random
+  - swear
+  - vacation
+  - sports
+  - salutation
+  - task
+  - ragging
+  - hod
+
+
+responses:
+  utter_greeting:
+  - text: "Hello!"
+  - text: "Good to see you again!"
+  - text: "Hi there, how can I help?"
+
+  utter_goodbye:
+  - text: "Sad to see you go :("
+  - text: "Talk to you later"
+  - text: "Goodbye!"
+  - text: "Come back soon"
+
+  utter_creator:
+  - text: "College students"
+
+  utter_name:
+  - text: "You can call me Unibot.A chatbot to guide you through the university admission process"
+  - text: "I'm Unibot. A chatbot to guide you through the university admission process"
+
+  utter_hours:
+  - text: "College is open 8am-5pm Monday-Saturday!"
+
+  utter_number:
+  - text: "You can contact at: NUMBER"
+
+  utter_course:
+  - text: "Our university offers Information Technology, Computer Engineering, Mechanical Engineering, Chemical Engineering, Civil Engineering, and Electrical and Electronics Engineering."
+
+  utter_fees:
+  - text: "For fee details, visit [here](LINK)."
+
+  utter_location:
+  - text: "[Here](ADD YOUR GOOGLE MAP LINK HERE)"
+
+  utter_hostel:
+  - text: "For hostel details, visit [here](ADD YOUR HOSTEL DETAIL PDF LINK OR ANY INFORMATION LINK OR ADD YOUR OWN ANSWERS)."
+
+  utter_event:
+  - text: "For event details, visit [here](ADD YOUR FUNCTIONS LINK OR YOUR OWN RESPONSE)."
+
+  utter_document:
+  - text: "To know more about the required documents, visit [here](ADD LINK OF ADMISSION GUIDANCE DOCUMENT FROM YOUR UNIVERSITY WEBSITE)."
+
+  utter_floors:
+  - text: "My College has a total of 2 floors."
+
+  utter_syllabus:
+  - text: "Timetable is provided directly to the students. To know about the syllabus, visit [here](TIMETABLE LINK)."
+
+  utter_library:
+  - text: "There is one huge and spacious library. Timings are 8 am to 6 pm. For more information, visit [here](ADD LIBRARY DETAIL LINK)."
+
+  utter_infrastructure:
+  - text: "Our University has excellent infrastructure. The campus is clean, with good IT labs and a fast internet connection."
+
+  utter_canteen:
+  - text: "Our university has a canteen with a variety of food available."
+
+  utter_menu:
+  - text: "We serve Franky, Locho, Alu-puri, Kachori, Khavsa, Thaali, and many more on the menu."
+
+  utter_placement:
+  - text: "To know about placement, visit [here](PLACEMENT INFORMATION LINK FROM YOUR UNIVERSITY WEBSITE IF THEY HAVE)."
+
+  utter_ithod:
+  - text: "All engineering departments have only one HOD, XYZ, who is available at (Place name)."
+
+  utter_computerhod:
+  - text: "All engineering departments have only one HOD, XYZ, who is available at (PLACE NAME)."
+
+  utter_extchod:
+  - text: "Different school-wise HODs are different. So be more clear with your school or department."
+
+  utter_principal:
+  - text: "XYZ is the college principal. If you need any help, then call your branch HOD first. That is more appropriate."
+
+  utter_sem:
+  - text: "Here is the Academic Calendar [website](YOUR ACADEMIC CALENDAR)."
+
+  utter_admission:
+  - text: "Application can also be submitted online through the University's [website](LINK OF ADMISSION DOCUMENT)."
+
+  utter_scholarship:
+  - text: "Many government scholarships are supported by our university. For details and updates, visit [here](SCHOLARSHIP DETAILS LINK)."
+
+  utter_facilities:
+  - text: "Our university's Engineering department provides fully AC Lab with an internet connection, smart classrooms, an auditorium, library, and canteen."
+
+  utter_college_intake:
+  - text: "For IT, Computer, and extc, 60 per branch. Seat may differ for different departments."
+
+  utter_uniform:
+  - text: "ENTER YOUR OWN UNIVERSITY UNIFORM CIRCULAR."
+
+  utter_committee:
+  - text: "For the various committees in college, contact this number: ADD NUMBER."
+
+  utter_random:
+  - text: "I am not programmed for this, please ask an appropriate query."
+
+  utter_swear:
+  - text: "Please use appropriate language. Maintaining decency would be appreciated."
+
+  utter_vacation:
+  - text: "The academic calendar is given to you by your class coordinators after you join your respective classes."
+
+  utter_sports:
+  - text: "Our university encourages all-round development of students and hence provides sports facilities on the campus. For more details, visit [here](LINK IF HAVE)."
+
+  utter_salutation:
+  - text: "I am glad I helped you. Welcome, anything else I can assist you with?"
+
+  utter_task:
+  - text: "I can answer low-intermediate questions regarding college. You can ask me questions regarding college, and I will try to answer them."
+
+  utter_ragging:
+  - text: "We are proud to tell you that our college provides a ragging-free environment, and we have strict rules against ragging."
+
+  utter_hod:
+  - text: "HODs differ for each branch. Please be more specific like: (HOD it)."
+
+
+
+session_config:
+  session_expiration_time: 60
+  carry_over_slots_to_new_session: true
