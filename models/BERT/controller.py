@@ -40,4 +40,23 @@ def get_response(text):
     label = label2id[chatbot(text)[0]['label']]
     response = random.choice(intents['intents'][label]['responses'])
 
+<<<<<<< HEAD
     return response
+
+def chatbot_cli():
+    print("Chatbot is ready. Type 'exit' to end the conversation.")
+
+    while True:
+        user_input = input("You: ")
+        if user_input.lower() == 'exit':
+            print("Goodbye!")
+            break
+
+        response = get_response(user_input)
+        print("Bot:", response)
+
+if __name__ == "__main__":
+    chatbot_cli()
+=======
+    return response
+>>>>>>> 50262099ac8229654f527918422eeac919275509
