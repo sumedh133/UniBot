@@ -40,7 +40,6 @@ def get_response(text):
     label = label2id[chatbot(text)[0]['label']]
     response = random.choice(intents['intents'][label]['responses'])
 
-<<<<<<< HEAD
     return response
 
 def chatbot_cli():
@@ -57,6 +56,3 @@ def chatbot_cli():
 
 if __name__ == "__main__":
     chatbot_cli()
-=======
-    return response
->>>>>>> 50262099ac8229654f527918422eeac919275509
