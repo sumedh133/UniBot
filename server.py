@@ -4,15 +4,17 @@ from models.BERT.controller import get_response as get_response_bert
 
 app = Flask(__name__)
 
-@app.route('/NLTK_1', methods=['GET'])
+@app.route('/NLTK_1', methods=['POST'])
 def get_nltk_response():
-    message = request.args.get('message')
+    data = request.json
+    message = data.get('message')
     response = get_response_nltk(message)
     return jsonify(response=response)
 
-@app.route('/BERT', methods=['GET'])
+@app.route('/BERT', methods=['POST'])
 def get_bert_response():
-    message = request.args.get('message')
+    data = request.json
+    message = data.get('message')
     response = get_response_bert(message)
     return jsonify(response=response)
 

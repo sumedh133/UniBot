@@ -1,3 +1,4 @@
 models/*/packages
 models/*/__pycache__
+models/*/bin
 models/RASA/.rasa
