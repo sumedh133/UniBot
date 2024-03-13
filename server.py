@@ -3,6 +3,7 @@ from models.NLTK_1.controller import get_response as get_response_nltk
 from models.BERT.controller import get_response as get_response_bert
 from flask_cors import CORS
 
+
 app = Flask(__name__)
 CORS(app)
 
@@ -18,7 +19,7 @@ def get_bert_response():
     data = request.json
     message = data.get('message')
     response = get_response_bert(message)
-    return jsonify(response=response)
+    return jsonify(response=response) 
 
 if __name__ == '__main__':
-    app.run(debug=True)
+    app.run(debug=True)  # Run the Flask app
