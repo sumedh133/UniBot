@@ -97,7 +97,7 @@ body.show-chatbot .chatbot {
 /* Styles for close and minimize buttons */
 .chatbot header span {
   position: absolute;
-  cursor: pointer;
+  /* cursor: pointer; */
   top: 50%;
   transform: translateY(-50%);
   right: 15px;
@@ -123,7 +123,7 @@ body.show-chatbot .chatbot {
   color: darkred; /* Adjust color as needed */
 }
 
-header h2 {
+header h2 { 
   font-size: 1.4rem;
 }
 .chatbot .chatbox {
@@ -150,6 +150,9 @@ header h2 {
   margin: 20px 0;
   justify-content: flex-end;
 }
+#minimize{
+  cursor: pointer;
+}
 .chatbox .incoming span {
   width: 32px;
   height: 32px;
@@ -170,6 +173,22 @@ header h2 {
   color: #fff;
   font-size: 0.95rem;
   background: blue;
+}
+.header-right {
+  display: flex;
+  align-items: center;
+}
+
+.reset-btn {
+  margin-left: 10px; /* Adjust the margin as needed */
+  padding: 5px 10px; /* Adjust padding as needed */
+  background-color: #f0f0f0; /* Adjust background color as needed */
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+.chatbox .incoming{
+  padding-bottom: 10px;
 }
 .chatbox .incoming p {
   border-radius: 10px 10px 10px 0;
@@ -251,7 +270,6 @@ header h2 {
 
 .minimize-chatbot,
 .close-btn {
-  cursor: pointer;
   margin-left: 10px;
   font-size: 20px;
   color: #333; /* Adjust color as needed */
@@ -321,3 +339,15 @@ body.show-chatbot .chatbot {
   background-color: lightgray; /* Change to the desired background color */
   /* Add any additional styling properties as needed */
 }
+
+.close-btn button,
+.close-btn img {
+    display: inline-block;
+    vertical-align: middle; /* Aligns the elements vertically */
+}
+
+/* Adjust spacing between the button and image if needed */
+.close-btn button {
+    margin-right: 0px; /* Adjust as needed */
+}
+

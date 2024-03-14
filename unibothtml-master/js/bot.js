@@ -1,5 +1,5 @@
 const chatbotToggler = document.querySelector(".chatbot-toggler");
-const closeBtn = document.querySelector(".close-btn");
+const closeBtn = document.querySelector("#minimize");
 const chatbox = document.querySelector(".chatbox");
 const chatInput = document.querySelector(".chat-input textarea");
 const sendChatBtn = document.querySelector("#send-btn");
@@ -17,6 +17,16 @@ const createChatLi = (message, className) => {
     chatLi.querySelector("p").textContent = message;
     return chatLi; 
 }
+
+const resetBtn = document.querySelector(".reset-btn");
+
+resetBtn.addEventListener("click", () => {
+    // Clear old chats
+    chatbox.innerHTML = ""; // Clearing the inner HTML removes all chat messages
+    const initialMessage = "Hi there, Unibot here... \nHow can I help you today?";
+    const initialMessageElement = createChatLi(initialMessage, "incoming");
+    chatbox.appendChild(initialMessageElement);
+}); 
 
 const generateResponse = (chatElement) => {
   const thinkingMessage = chatElement.querySelector("p");
@@ -125,7 +135,7 @@ const handleChat = () => {
         chatbox.appendChild(incomingChatLi);
         chatbox.scrollTo(0, chatbox.scrollHeight);
         generateResponse(incomingChatLi);
-    }, 600);
+    }, 400);
 }
 
 const toggleMicBtn = (active) => {
@@ -190,5 +200,11 @@ closeBtn.addEventListener("click", () => document.body.classList.remove("show-ch
 chatbotToggler.addEventListener("click", () => document.body.classList.toggle("show-chatbot")); 
 
 document.getElementById("dropdown-menu").addEventListener("change", function() {
-  selectedModel = this.value; 
+    selectedModel = this.value; 
+    chatbox.innerHTML = ""; // Clearing the inner HTML removes all chat messages
+    const initialMessage = "Hi there, Unibot here... \nHow can I help you today?";
+    const initialMessageElement = createChatLi(initialMessage, "incoming");
+    chatbox.appendChild(initialMessageElement);
+    const switchMessage = `Model switched to ${selectedModel}`;
+    chatbox.appendChild(createChatLi(switchMessage, "incoming"));
 });
