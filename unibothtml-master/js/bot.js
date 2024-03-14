@@ -2,7 +2,8 @@ const chatbotToggler = document.querySelector(".chatbot-toggler");
 const closeBtn = document.querySelector(".close-btn");
 const chatbox = document.querySelector(".chatbox");
 const chatInput = document.querySelector(".chat-input textarea");
-const sendChatBtn = document.querySelector(".chat-input span");
+const sendChatBtn = document.querySelector("#send-btn");
+const micBtn=document.querySelector('#mic-btn');
 let selectedModel="NLTK";
 
 let userMessage = ""; // Variable to store user's message
@@ -16,82 +17,6 @@ const createChatLi = (message, className) => {
     chatLi.querySelector("p").textContent = message;
     return chatLi; 
 }
-
-const fetchNLTKData = () => {
-  fetch('http://127.0.0.1:5000/NLTK_1', {
-      method: 'POST',
-      headers: {
-          'Content-Type': 'application/json'
-      },
-      body: JSON.stringify({ message: userMessage })
-  })
-  .then(response => response.json())
-  .then(data => {
-      // Handle the response data for the NLTK model
-      console.log("NLTK Model Data:", data);
-  })
-  .catch(error => {
-      console.error('NLTK Model Error:', error);
-  });
-};
-
-// Function to fetch data from the BERT model API
-const fetchBERTData = () => {
-  fetch('http://example.com/bert_api', {
-      method: 'POST',
-      headers: {
-          'Content-Type': 'application/json'
-      },
-      body: JSON.stringify({ message: userMessage })
-  })
-  .then(response => response.json())
-  .then(data => {
-      // Handle the response data for the BERT model
-      console.log("BERT Model Data:", data);
-  })
-  .catch(error => {
-      console.error('BERT Model Error:', error);
-  });
-};
-
-// Function to fetch data from the HYBRID model API
-const fetchHybridData = () => {
-  fetch('http://example.com/hybrid_api', {
-      method: 'POST',
-      headers: {
-          'Content-Type': 'application/json'
-      },
-      body: JSON.stringify({ message: userMessage })
-  })
-  .then(response => response.json())
-  .then(data => {
-      // Handle the response data for the HYBRID model
-      console.log("HYBRID Model Data:", data);
-  })
-  .catch(error => {
-      console.error('HYBRID Model Error:', error);
-  });
-};
-
-// Function to fetch data from the RASA model API
-const fetchRasaData = () => {
-  fetch('http://localhost:5005/webhooks/rest/webhook', {
-      method: 'POST',
-      headers: {
-          'Content-Type': 'application/json'
-      },
-      body: JSON.stringify({ message: userMessage, "sender": "user_1" })
-  })
-  .then(response => response.json())
-  .then(data => {
-      // Handle the response data for the RASA model
-      console.log("RASA Model Data:", data);
-  })
-  .catch(error => {
-      console.error('RASA Model Error:', error);
-  });
-};
-
 
 const generateResponse = (chatElement) => {
   const thinkingMessage = chatElement.querySelector("p");
@@ -203,27 +128,47 @@ const handleChat = () => {
     }, 600);
 }
 
-// Check if browser supports SpeechRecognition
+const toggleMicBtn = (active) => {
+    if (active) {
+        micBtn.style.color = 'green'; // Change color or add other styling
+    } else {
+        micBtn.style.color = 'blue'; // Change color or add other styling
+    }
+};
+
 window.SpeechRecognition = window.SpeechRecognition || window.webkitSpeechRecognition;
 if (typeof window.SpeechRecognition === 'undefined') {
-  console.log('Sorry, your browser does not support Speech Recognition.');
+    console.log('Sorry, your browser does not support Speech Recognition.');
 } else {
-  const recognition = new SpeechRecognition();
-  recognition.interimResults = true;
+    const recognition = new SpeechRecognition();
+    recognition.interimResults = true;
 
-  recognition.addEventListener('result', e => {
-    const transcript = Array.from(e.results)
-      .map(result => result[0])
-      .map(result => result.transcript)
-      .join('');
+    recognition.addEventListener('result', e => {
+        const transcript = Array.from(e.results)
+            .map(result => result[0])
+            .map(result => result.transcript)
+            .join('');
 
-    chatInput.value = transcript; // Set the transcript to the chat input
-  });
+        chatInput.value = transcript;
+    });
 
-  document.querySelector('#mic-btn').addEventListener('click', () => {
-    recognition.start();
-  });
+    recognition.addEventListener('start', () => {
+        toggleMicBtn(true); // Indicate that microphone is active
+    });
+
+    recognition.addEventListener('end', () => {
+        toggleMicBtn(false); // Indicate that microphone is inactive
+    });
+
+    micBtn.addEventListener('click', () => {
+        if (recognition && recognition.recognizing) {
+            recognition.stop(); // Stop listening if already listening
+        } else {
+            recognition.start(); // Start listening if not listening
+        }
+    });
 }
+
 chatInput.addEventListener("input", () => {
     // Adjust the height of the input textarea based on its content
     chatInput.style.height = `${inputInitHeight}px`;
@@ -231,17 +176,17 @@ chatInput.addEventListener("input", () => {
 });
 
 chatInput.addEventListener("keydown", (e) => {
-    // If Enter key is pressed without Shift key and the window 
-    // width is greater than 800px, handle the chat
     if(e.key === "Enter" && !e.shiftKey && window.innerWidth > 800) {
         e.preventDefault();
         handleChat();
     }
 });
 
-sendChatBtn.addEventListener("click", handleChat);
-closeBtn.addEventListener("click", () => document.body.classList.remove("show-chatbot"));
+sendChatBtn.addEventListener("click", () => {
+    handleChat();
+});
 
+closeBtn.addEventListener("click", () => document.body.classList.remove("show-chatbot"));
 chatbotToggler.addEventListener("click", () => document.body.classList.toggle("show-chatbot")); 
 
 document.getElementById("dropdown-menu").addEventListener("change", function() {

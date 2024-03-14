@@ -461,14 +461,13 @@
         <header class="header">
             <div class="header-left">
                 
-                <select id="dropdown-menu">
-                    <option selected disabled value="NLTK">Models</option>
-                    <option value="NLTK">NLTK</option>
+                <select id="dropdown-menu" title="Select model">
+                    <option value="NLTK" selected>NLTK</option>
                     <option value="BERT">BERT</option>
                     <option value="HYBRID">HYBRID</option>
                     <option value="RASA">RASA</option>
                     <!-- Add more options as needed -->
-                </select> 
+                </select>                
             </div>
           
             <h2> <img src="../images/pngwing.com.png" alt="Unibot" class="chatbot-img">Unibot</h2>
@@ -494,8 +493,8 @@
 
         <div class="chat-input">
             <textarea placeholder="Enter a message..." spellcheck="false" required></textarea>
-            <span id="mic-btn" class="material-symbols-rounded">mic</span>
-            <span id="send-btn" class="material-symbols-rounded">send</span>
+            <span id="mic-btn" class="material-symbols-rounded" title="speech">mic</span>
+            <span id="send-btn" class="material-symbols-rounded" title="submit">send</span>
         </div>
     </div>
     <!--========== SCROLL UP ==========-->

@@ -209,7 +209,7 @@ header h2 {
   height: 55px;
   display: flex;
   align-items: center;
-  visibility: hidden;
+  /* visibility: hidden; */
   font-size: 1.35rem;
 }
 .chat-input textarea:valid ~ span {
