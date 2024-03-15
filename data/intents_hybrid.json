@@ -485,7 +485,7 @@
        "cs"
     ],
     "responses": [
-        "All engineering departments have only one hod. XYZCS is the IT hod, contact him (link)here"
+        "All engineering departments have only one hod. XYZCS is the CS hod, contact him (link)here"
     ],
     "context_set": "",
     "context_filter":"hod"
@@ -502,10 +502,10 @@
        "extc"
     ],
     "responses": [
-        "All engineering departments have only one hod. XYZEXTC is the IT hod, contact him (link)here"
+        "All engineering departments have only one hod. XYZEXTC is the EXTC hod, contact him (link)here"
     ],
     "context_set": "",
-    "context_filter":""
+    "context_filter":"hod"
  },
   {
     "tag": "principal",

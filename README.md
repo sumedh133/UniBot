@@ -7,7 +7,6 @@ make a seperate apis at the end in main folder in .py files
 
 ## Models:
 - [x] Simple NLTK
-- [ ] Context aware NLTK- Hybrid model
+- [X] Context aware NLTK- Hybrid model
 - [x] RASA
 - [x] BERT transformer
-- [ ] RAG

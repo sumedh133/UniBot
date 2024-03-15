@@ -31,7 +31,7 @@ def classify(sentence, model):
                 bag[i] = 1
     p = np.array([bag])
     res = model.predict(p)[0]
-    ERROR_THRESHOLD = 0.30
+    ERROR_THRESHOLD = 0.10
     results = [[i,r] for i,r in enumerate(res) if r>ERROR_THRESHOLD]
     results.sort(key=lambda x: x[1], reverse=True)
     return_list = []
@@ -40,17 +40,22 @@ def classify(sentence, model):
     return return_list
 
 def respond(ints, intents_json,user):
+    result="Sorry I cant answer that currently"
     if(not(ints)) :
-        return "Sorry I cant answer that currently"
+        return result
     tag = ints[0]['intent']
+    flag=True
     list_of_intents = intents_json['intents']
     for i in list_of_intents:
         if(i['tag']== tag):
             print(i['context_filter']+"  "+tag)
             if(i['context_filter']==contexts[user]):
+                flag=False
                 contexts[user]=i['context_set']
                 result = random.choice(i['responses'])
             break
+    if(flag):    
+        contexts[user]=""
     return result
 
 def get_response(text,user):
@@ -59,6 +64,9 @@ def get_response(text,user):
     ints = classify(text, model)
     res = respond(ints, intents,user)
     return res
+
+def con():
+    return contexts
 
 def chatbot_cli():
     print("Chatbot is ready. Type 'exit' to end the conversation.")
