@@ -164,17 +164,7 @@
        "what are courses in UNI?",
        "branches available in UNI?",
        "can you tell me the courses available in UNI?",
-       "can you tell me the branches available in UNI?",
-       "computer engineering?",
-       "computer",
-       "Computer engineering?",
-       "it",
-       "IT",
-       "Information Technology",
-       "AI/Ml",
-       "Mechanical engineering",
-       "Chemical engineering",
-       "Civil engineering"
+       "can you tell me the branches available in UNI?"
     ],
     "responses": [
        "Our university offers Information Technology, computer Engineering, Mechanical engineering,Chemical engineering, Civil engineering and extc Engineering."
@@ -449,7 +439,9 @@
        "Who is computer HOD",
        "Where is computer HOD",
        "computer hod",
-       "name of computer hod"
+       "name of computer hod",
+       "cs hod",
+       "computer science hod"
     ],
     "responses": [
        "All engineering departments have only one hod XYZ who available on (PLACE NAME)"
@@ -749,9 +741,11 @@
   {
     "tag": "hod",
     "patterns": [
-       "hod",
-       "hod name",
-       "who is the hod"
+       "hods",
+       "list of college hods",
+       "heads of departments",
+       "hods of the college",
+       "heads of various college departments"
     ],
     "responses": [
        "HODs differ for each branch, please be more specific like: (HOD it)"

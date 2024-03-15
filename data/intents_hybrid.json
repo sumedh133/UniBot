@@ -20,7 +20,7 @@
        "Hi there, how can I help?"
     ],
     "context_set": "",
-    "context_filter":[]
+    "context_filter":""
  },
   {
     "tag": "goodbye",
@@ -45,7 +45,7 @@
        "Come back soon"
     ],
     "context_set": "",
-"context_filter":[]
+"context_filter":""
  },
   {
     "tag": "creator",
@@ -71,7 +71,7 @@
        "College students"
     ],
     "context_set": "",
-"context_filter":[]
+"context_filter":""
  },
   {
     "tag": "name",
@@ -97,7 +97,7 @@
        "I am your helper"
     ],
     "context_set": "",
-"context_filter":[]
+"context_filter":""
  },
   {
     "tag": "hours",
@@ -124,7 +124,7 @@
        "College is open 8am-5pm Monday-Saturday!"
     ],
     "context_set": "",
-"context_filter":[]
+"context_filter":""
  },
   {
     "tag": "number",
@@ -149,7 +149,7 @@
        "You can contact at: NUMBER"
     ],
     "context_set": "",
-"context_filter":[]
+"context_filter":""
  },
   {
     "tag": "course",
@@ -170,23 +170,13 @@
        "what are courses in UNI?",
        "branches available in UNI?",
        "can you tell me the courses available in UNI?",
-       "can you tell me the branches available in UNI?",
-       "computer engineering?",
-       "computer",
-       "Computer engineering?",
-       "it",
-       "IT",
-       "Information Technology",
-       "AI/Ml",
-       "Mechanical engineering",
-       "Chemical engineering",
-       "Civil engineering"
+       "can you tell me the branches available in UNI?"
     ],
     "responses": [
        "Our university offers Information Technology, computer Engineering, Mechanical engineering,Chemical engineering, Civil engineering and extc Engineering."
     ],
     "context_set": "",
-"context_filter":[]
+"context_filter":""
  },
   {
     "tag": "fees",
@@ -219,7 +209,7 @@
        "For Fee detail visit <a target=\"_blank\" href=\"LINK\"> here</a>"
     ],
     "context_set": "",
-"context_filter":[]
+"context_filter":""
  },
   {
     "tag": "location",
@@ -243,7 +233,7 @@
        "<a target=\"_blank\" href=\"ADD YOU GOOGLE MAP LINK HERE\"> here</a>"
     ],
     "context_set": "",
-"context_filter":[]
+"context_filter":""
  },
   {
     "tag": "hostel",
@@ -275,7 +265,7 @@
        "For hostel detail visit <a target=\"_blank\" href=\"ADD YOUR HOSTEL DETAIL PDF LINK OR ANY INFORMATION LINK OR ADD YOU OWN ANSWERS\"> here</a>"
     ],
     "context_set": "",
-"context_filter":[]
+"context_filter":""
  },
   {
     "tag": "event",
@@ -296,7 +286,7 @@
        "For event detail visit <a target=\"_blank\" href=\"ADD YOUR FUNCTIONS LINK OR YOUR OWN RESPONSE\"> here</a>"
     ],
     "context_set": "",
-"context_filter":[]
+"context_filter":""
  },
   {
     "tag": "document",
@@ -319,7 +309,7 @@
        "To know more about document required visit <a target=\"_blank\" href=\"ADD LINK OF ADMISSION GUIDANCE DOCUMENT FROM YOUR UNIVERSITY WEBSITE\"> here</a>"
     ],
     "context_set": "",
-"context_filter":[]
+"context_filter":""
  },
   {
     "tag": "floors",
@@ -336,7 +326,7 @@
        "My College has total 2 floors "
     ],
     "context_set": "",
-"context_filter":[]
+"context_filter":""
  },
   {
     "tag": "syllabus",
@@ -353,7 +343,7 @@
        "Timetable provide direct to the students OR To know about syllabus visit <a target=\"_blank\" href=\"TIMETABLE LINK\"> here</a>"
     ],
     "context_set": "",
-"context_filter":[]
+"context_filter":""
  },
   {
     "tag": "library",
@@ -377,7 +367,7 @@
        "There is one huge and spacious library.timings are 8am to 6pm and for more visit <a target=\"blank\" href=\"ADD LIBRARY DETAIL LINK\">here</a>"
     ],
     "context_set": "",
-"context_filter":[]
+"context_filter":""
  },
   {
     "tag": "infrastructure",
@@ -390,7 +380,7 @@
        "Our University has Excellent Infrastructure. Campus is clean. Good IT Labs With Good Speed of Internet connection"
     ],
     "context_set": "",
-"context_filter":[]
+"context_filter":""
  },
   {
     "tag": "canteen",
@@ -411,7 +401,7 @@
        "Our university has canteen with variety of food available"
     ],
     "context_set": "",
-"context_filter":[]
+"context_filter":""
  },
   {
     "tag": "menu",
@@ -428,7 +418,7 @@
        "we serve Franky, Locho, Alu-puri, Kachori, Khavsa, Thaali and many more on menu"
     ],
     "context_set": "",
-"context_filter":[]
+"context_filter":""
  },
   {
     "tag": "placement",
@@ -447,7 +437,7 @@
        "To know about placement visit <a target=\"_blank\" href=\"PLACEMENT INFORMATION LINK FROM YOUR UNIVERSITY WEBSITE IF THEY HAVE\">here</a>"
     ],
     "context_set": "",
-    "context_filter":[]
+    "context_filter":""
  },
     {
         "tag": "hod",
@@ -457,13 +447,14 @@
         "who is the hod",
         "tell me about the head of departments",
         "who are the hods",
-        "heads of departments"
+        "heads of departments",
+        "tell me about hods"
         ],
         "responses": [
         "HODs differ for each branch, please specify the branch you want to know about"
         ],
-        "context_set": "",
-    "context_filter":[]
+        "context_set": "hod",
+    "context_filter":""
     },
   {
     "tag": "ithod",
@@ -480,7 +471,7 @@
        "All engineering departments have only one hod. XYZIT is the IT hod, contact him (link)here"
     ],
     "context_set": "",
-    "context_filter":["hod"]
+    "context_filter":"hod"
  },
   {
     "tag": "computerhod",
@@ -497,7 +488,7 @@
         "All engineering departments have only one hod. XYZCS is the IT hod, contact him (link)here"
     ],
     "context_set": "",
-    "context_filter":["hod"]
+    "context_filter":"hod"
  },
   {
     "tag": "extchod",
@@ -514,7 +505,7 @@
         "All engineering departments have only one hod. XYZEXTC is the IT hod, contact him (link)here"
     ],
     "context_set": "",
-    "context_filter":[]
+    "context_filter":""
  },
   {
     "tag": "principal",
@@ -531,7 +522,7 @@
        "XYZPRINCIPAL is college principal and if you need any help then call your branch hod first.That is more appropriate"
     ],
     "context_set": "",
-"context_filter":[]
+"context_filter":""
  },
   {
     "tag": "sem",
@@ -552,7 +543,7 @@
        "Here is the Academic Calendar  <a target=\"_blank\" href=\"YOUR ACADEMIC CALENDER\">website</a>"
     ],
     "context_set": "",
-    "context_filter":[]
+    "context_filter":""
  },
   {
     "tag": "admission",
@@ -568,7 +559,7 @@
        "Application can also be submitted online through the Unversity's  <a target=\"_blank\" href=\"LINK OF ADMISSION DOCUMENT\">website</a>"
     ],
     "context_set": "",
-"context_filter":[]
+"context_filter":""
  },
   {
     "tag": "scholarship",
@@ -604,7 +595,7 @@
        "Many government scholarships are supported by our university. For details and updates visit <a target=\"_blank\" href=\"(SCHOLARSHIP DETAILS LINK)\">here</a>"
     ],
     "context_set": "",
-"context_filter":[]
+"context_filter":""
  },
   {
     "tag": "facilities",
@@ -619,7 +610,7 @@
        "Our university's Engineering department provides fully AC Lab with internet connection, smart classroom, Auditorium, library,canteen"
     ],
     "context_set": "",
-"context_filter":[]
+"context_filter":""
  },
   {
     "tag": "college intake",
@@ -638,7 +629,7 @@
        "For IT, Computer and extc 60 per branch and seat may be differ for different department."
     ],
     "context_set": "",
-"context_filter":[]
+"context_filter":""
  },
   {
     "tag": "uniform",
@@ -657,7 +648,7 @@
        "ENTER YOUR OWN UNIVERSITY UNIFORM CIRCULER"
     ],
     "context_set": "",
-"context_filter":[]
+"context_filter":""
  },
   {
     "tag": "committee",
@@ -673,7 +664,7 @@
        "For the various committe in college contact this number: ADD NUMBER"
     ],
     "context_set": "",
-"context_filter":[]
+"context_filter":""
  },
   {
     "tag": "random",
@@ -686,7 +677,7 @@
        "I am not program for this, please ask appropriate query"
     ],
     "context_set": "",
-"context_filter":[]
+"context_filter":""
  },
  {
     "tag": "swear",
@@ -706,7 +697,7 @@
        "Maintaining decency would be appreciated"
     ],
     "context_set": "",
-"context_filter":[]
+"context_filter":""
  },
   {
     "tag": "vacation",
@@ -728,7 +719,7 @@
        "Academic calender is given to you by your class-soordinators after you join your respective classes"
     ],
     "context_set": "",
-"context_filter":[]
+"context_filter":""
  },
   {
     "tag": "sports",
@@ -745,7 +736,7 @@
        "Our university encourages all-round development of students and hence provides sports facilities in the campus. For more details visit<a target=\"_blank\" href=/\"(LINK IF HAVE)\">here</a>"
     ],
     "context_set": "",
-"context_filter":[]
+"context_filter":""
  },
   {
     "tag": "salutaion",
@@ -769,7 +760,7 @@
        "welcome, anything else i can assist you with?"
     ],
     "context_set": "",
-"context_filter":[]
+"context_filter":""
  },
   {
     "tag": "task",
@@ -786,7 +777,7 @@
        "You can ask me questions regarding college, and i will try to answer them"
     ],
     "context_set": "",
-"context_filter":[]
+"context_filter":""
  },
   {
     "tag": "ragging",
@@ -806,7 +797,7 @@
        "We are Proud to tell you that our college provides ragging free environment, and we have strict rules against ragging"
     ],
     "context_set": "",
-"context_filter":[]
+"context_filter":""
  },
  {
     "tag": "eligibility",
@@ -821,7 +812,7 @@
       "Eligibility criteria vary by program. You can find detailed information on our website or contact the admission office."
     ],
     "context_set": "",
-"context_filter":[]
+"context_filter":""
   },
   {
     "tag": "application_process",
@@ -836,7 +827,7 @@
       "To apply, visit our official website and follow the instructions. Required documents include academic transcripts, ID proof, and passport-sized photos."
     ],
     "context_set": "",
-"context_filter":[]
+"context_filter":""
   },
   {
     "tag": "admission_deadlines",
@@ -851,7 +842,7 @@
       "Admission deadlines can vary. Check our website for the latest information on application deadlines for each program."
     ],
     "context_set": "",
-"context_filter":[]
+"context_filter":""
   },
   {
     "tag": "financial_aid",
@@ -866,7 +857,7 @@
       "We offer various scholarships and financial aid options. Explore our scholarship programs on the official website."
     ],
     "context_set": "",
-"context_filter":[]
+"context_filter":""
   },
   {
     "tag": "campus_facilities",
@@ -881,7 +872,7 @@
       "Our campus features state-of-the-art facilities including modern classrooms, laboratories, recreational areas, and sports facilities."
     ],
     "context_set": "",
-"context_filter":[]
+"context_filter":""
   },
   {
     "tag": "extracurricular_activities",
@@ -896,7 +887,7 @@
       "Get involved in our vibrant campus life! We have a range of clubs, sports teams, and cultural activities to suit various interests."
     ],
     "context_set": "",
-"context_filter":[]
+"context_filter":""
   },
   {
     "tag": "student_support_services",
@@ -911,7 +902,7 @@
       "We prioritize the well-being of our students. Explore our support services, including counseling, career guidance, and academic assistance."
     ],
     "context_set": "",
-"context_filter":[]
+"context_filter":""
   },
   {
     "tag": "internship_opportunities",
@@ -926,7 +917,7 @@
       "Our university fosters strong industry ties, providing students with valuable internship opportunities. Explore career development programs on our website."
     ],
     "context_set": "",
-"context_filter":[]
+"context_filter":""
   },
   {
     "tag": "research_opportunities",
@@ -941,7 +932,7 @@
       "We encourage students to engage in research. Learn about ongoing research projects and opportunities to collaborate with faculty."
     ],
     "context_set": "",
-"context_filter":[]
+"context_filter":""
   },
   {
     "tag": "alumni_success_stories",
@@ -956,7 +947,7 @@
       "Discover inspiring stories of our successful alumni who have made significant contributions in their respective fields."
     ],
     "context_set": "",
-"context_filter":[]
+"context_filter":""
   },
   {
     "tag": "admission_requirements",
@@ -971,7 +962,7 @@
       "Admission requirements may vary by program. Check our website or contact the admissions office for detailed information."
     ],
     "context_set": "",
-"context_filter":[]
+"context_filter":""
   },
   {
     "tag": "application_submission",
@@ -986,7 +977,7 @@
       "Submit your application through our official online portal. Ensure all required documents are uploaded before the deadline."
     ],
     "context_set": "",
-"context_filter":[]
+"context_filter":""
   },
   {
     "tag": "admission_decisions",
@@ -1001,7 +992,7 @@
       "Admission decisions are typically communicated by email or through the online application portal. Check your status regularly for updates."
     ],
     "context_set": "",
-"context_filter":[]
+"context_filter":""
   },
   {
     "tag": "financial_aid_options",
@@ -1016,7 +1007,7 @@
       "Explore our diverse financial aid options, including scholarships, grants, and work-study programs. Check the eligibility criteria on our website."
     ],
     "context_set": "",
-"context_filter":[]
+"context_filter":""
   },
   {
     "tag": "accommodation_options",
@@ -1031,7 +1022,7 @@
       "Our university offers a range of accommodation options, including on-campus dormitories. Explore our housing facilities and application process on our website."
     ],
     "context_set": "",
-"context_filter":[]
+"context_filter":""
   }
  ]
  }

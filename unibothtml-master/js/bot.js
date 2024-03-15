@@ -5,8 +5,9 @@ const chatInput = document.querySelector(".chat-input textarea");
 const sendChatBtn = document.querySelector("#send-btn");
 const micBtn=document.querySelector('#mic-btn');
 let selectedModel="NLTK";
+let userId=Math.floor(Math.random()*(1000-100+1)+100);
 
-let userMessage = ""; // Variable to store user's message
+let userMessage = ""; 
 const inputInitHeight = chatInput.scrollHeight;
 
 const createChatLi = (message, className) => {
@@ -26,6 +27,8 @@ resetBtn.addEventListener("click", () => {
     const initialMessage = "Hi there, Unibot here... \nHow can I help you today?";
     const initialMessageElement = createChatLi(initialMessage, "incoming");
     chatbox.appendChild(initialMessageElement);
+    userId++;
+    console.log(userId);
 }); 
 
 const generateResponse = (chatElement) => {
@@ -46,7 +49,7 @@ const generateResponse = (chatElement) => {
         headers: {
             'Content-Type': 'application/json'
         },
-        body: JSON.stringify({ message: userMessage, "sender": "user_1" })
+        body: JSON.stringify({ message: userMessage, "sender": userId.toString() })
     })
     .then(response => {
         // Simulate delay to make it visible
@@ -75,6 +78,31 @@ const generateResponse = (chatElement) => {
           'Content-Type': 'application/json'
         },
         body: JSON.stringify({ message: userMessage })
+    }).then(response => {
+        // Simulate delay to make it visible
+        return new Promise(resolve => setTimeout(resolve, 2000)).then(() => response.json());
+    }).then(data => {
+        console.log(data); // Ensure you're getting the correct response
+        clearInterval(intervalId); // Stop adding dots when response is received
+        if (data && data.response) {
+            thinkingMessage.textContent = data.response; 
+            chatbox.scrollTo(0, chatbox.scrollHeight);
+        } else {
+            console.log(data);
+            console.error("Invalid response format or missing 'text' property.");
+        }
+    }).catch(error => {
+        clearInterval(intervalId); // Stop adding dots in case of error
+        console.error('Error:', error);
+    });
+  }
+  else if(selectedModel=="HYBRID"){
+    fetch('http://127.0.0.1:5000/HYBRID', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json'
+        },
+        body: JSON.stringify({ message: userMessage, "sender":userId.toString()})
     }).then(response => {
         // Simulate delay to make it visible
         return new Promise(resolve => setTimeout(resolve, 2000)).then(() => response.json());
@@ -207,4 +235,6 @@ document.getElementById("dropdown-menu").addEventListener("change", function() {
     chatbox.appendChild(initialMessageElement);
     const switchMessage = `Model switched to ${selectedModel}`;
     chatbox.appendChild(createChatLi(switchMessage, "incoming"));
+    userId++;
+    console.log(userId);
 });
