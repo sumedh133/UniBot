@@ -34,8 +34,8 @@ def get_response(text):
     text = text.strip().lower()
     score = chatbot(text)[0]['score']
 
-    if score < 0.5:
-        return "Sorry I can't answer that"
+    if score < 0.7:
+        return "Sorry I can't answer that currently"
 
     label = label2id[chatbot(text)[0]['label']]
     response = random.choice(intents['intents'][label]['responses'])

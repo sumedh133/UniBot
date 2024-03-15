@@ -3,7 +3,6 @@ from models.NLTK_1.controller import get_response as get_response_nltk
 from models.BERT.controller import get_response as get_response_bert
 from flask_cors import CORS
 
-
 app = Flask(__name__)
 CORS(app)
 

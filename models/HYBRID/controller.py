@@ -11,7 +11,7 @@ from nltk.stem import WordNetLemmatizer
 lemmatizer = WordNetLemmatizer()
 
 model = load_model(os.path.join(dir_path, 'bin', 'model.h5'))
-intents = json.loads(open(os.path.join(dir_path, '../../data/intents_generated.json')).read())
+intents = json.loads(open(os.path.join(dir_path, '../../data/intents_hybrid.json')).read())
 words = pickle.load(open(os.path.join(dir_path, 'bin', 'words.pkl'),'rb'))
 classes = pickle.load(open(os.path.join(dir_path, 'bin', 'classes.pkl'),'rb'))
 
