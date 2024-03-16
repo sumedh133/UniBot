@@ -22,8 +22,7 @@ const createChatLi = (message, className) => {
 const resetBtn = document.querySelector(".reset-btn");
 
 resetBtn.addEventListener("click", () => {
-    // Clear old chats
-    chatbox.innerHTML = ""; // Clearing the inner HTML removes all chat messages
+    chatbox.innerHTML = ""; 
     const initialMessage = "Hi there, Unibot here... \nHow can I help you today?";
     const initialMessageElement = createChatLi(initialMessage, "incoming");
     chatbox.appendChild(initialMessageElement);
@@ -37,12 +36,10 @@ const generateResponse = (chatElement) => {
   let dots = 0;
 
   const intervalId = setInterval(() => {
-      dots = (dots + 1) % 4; // Loop dots from 0 to 3
-      thinkingMessage.textContent = "Thinking" + ".".repeat(dots); // Add dots to the message
-  }, 400); // Interval time for adding dots (500 milliseconds = 0.5 seconds)
+      dots = (dots + 1) % 4; 
+      thinkingMessage.textContent = "Thinking" + ".".repeat(dots); 
+  }, 400); 
 
-
-  // Request to Rasa server
   if(selectedModel=="RASA"){
     fetch('http://localhost:5005/webhooks/rest/webhook', {
         method: 'POST',
@@ -52,12 +49,11 @@ const generateResponse = (chatElement) => {
         body: JSON.stringify({ message: userMessage, "sender": userId.toString() })
     })
     .then(response => {
-        // Simulate delay to make it visible
         return new Promise(resolve => setTimeout(resolve, 2000)).then(() => response.json());
     })
     .then(data => {
-        console.log(data); // Ensure you're getting the correct response
-        clearInterval(intervalId); // Stop adding dots when response is received
+        console.log(data); 
+        clearInterval(intervalId); 
         if (data && data.length > 0 && data[0].text) {
             thinkingMessage.textContent = data[0].text; 
             chatbox.scrollTo(0, chatbox.scrollHeight);
@@ -67,7 +63,7 @@ const generateResponse = (chatElement) => {
         }
     })
     .catch(error => {
-        clearInterval(intervalId); // Stop adding dots in case of error
+        clearInterval(intervalId);
         console.error('Error:', error);
     });
   }
@@ -79,11 +75,10 @@ const generateResponse = (chatElement) => {
         },
         body: JSON.stringify({ message: userMessage })
     }).then(response => {
-        // Simulate delay to make it visible
         return new Promise(resolve => setTimeout(resolve, 2000)).then(() => response.json());
     }).then(data => {
-        console.log(data); // Ensure you're getting the correct response
-        clearInterval(intervalId); // Stop adding dots when response is received
+        console.log(data);
+        clearInterval(intervalId); 
         if (data && data.response) {
             thinkingMessage.textContent = data.response; 
             chatbox.scrollTo(0, chatbox.scrollHeight);
@@ -92,7 +87,7 @@ const generateResponse = (chatElement) => {
             console.error("Invalid response format or missing 'text' property.");
         }
     }).catch(error => {
-        clearInterval(intervalId); // Stop adding dots in case of error
+        clearInterval(intervalId); 
         console.error('Error:', error);
     });
   }
@@ -104,11 +99,10 @@ const generateResponse = (chatElement) => {
         },
         body: JSON.stringify({ message: userMessage, "sender":userId.toString()})
     }).then(response => {
-        // Simulate delay to make it visible
         return new Promise(resolve => setTimeout(resolve, 2000)).then(() => response.json());
     }).then(data => {
-        console.log(data); // Ensure you're getting the correct response
-        clearInterval(intervalId); // Stop adding dots when response is received
+        console.log(data); 
+        clearInterval(intervalId); 
         if (data && data.response) {
             thinkingMessage.textContent = data.response; 
             chatbox.scrollTo(0, chatbox.scrollHeight);
@@ -117,7 +111,7 @@ const generateResponse = (chatElement) => {
             console.error("Invalid response format or missing 'text' property.");
         }
     }).catch(error => {
-        clearInterval(intervalId); // Stop adding dots in case of error
+        clearInterval(intervalId); 
         console.error('Error:', error);
     });
   }
@@ -129,11 +123,10 @@ const generateResponse = (chatElement) => {
         },
         body: JSON.stringify({ message: userMessage })
     }).then(response => {
-        // Simulate delay to make it visible
         return new Promise(resolve => setTimeout(resolve, 2000)).then(() => response.json());
     }).then(data => {
-        console.log(data); // Ensure you're getting the correct response
-        clearInterval(intervalId); // Stop adding dots when response is received
+        console.log(data); 
+        clearInterval(intervalId); 
         if (data && data.response) {
             thinkingMessage.textContent = data.response; 
             chatbox.scrollTo(0, chatbox.scrollHeight);
@@ -142,7 +135,7 @@ const generateResponse = (chatElement) => {
             console.error("Invalid response format or missing 'text' property.");
         }
     }).catch(error => {
-        clearInterval(intervalId); // Stop adding dots in case of error
+        clearInterval(intervalId); 
         console.error('Error:', error);
     });
   }
@@ -168,9 +161,9 @@ const handleChat = () => {
 
 const toggleMicBtn = (active) => {
     if (active) {
-        micBtn.style.color = 'green'; // Change color or add other styling
+        micBtn.style.color = 'green'; 
     } else {
-        micBtn.style.color = 'blue'; // Change color or add other styling
+        micBtn.style.color = 'blue'; 
     }
 };
 
@@ -191,24 +184,23 @@ if (typeof window.SpeechRecognition === 'undefined') {
     });
 
     recognition.addEventListener('start', () => {
-        toggleMicBtn(true); // Indicate that microphone is active
+        toggleMicBtn(true); 
     });
 
     recognition.addEventListener('end', () => {
-        toggleMicBtn(false); // Indicate that microphone is inactive
+        toggleMicBtn(false); 
     });
 
     micBtn.addEventListener('click', () => {
         if (recognition && recognition.recognizing) {
-            recognition.stop(); // Stop listening if already listening
+            recognition.stop();
         } else {
-            recognition.start(); // Start listening if not listening
+            recognition.start();
         }
     });
 }
 
 chatInput.addEventListener("input", () => {
-    // Adjust the height of the input textarea based on its content
     chatInput.style.height = `${inputInitHeight}px`;
     chatInput.style.height = `${chatInput.scrollHeight}px`;
 });
@@ -229,7 +221,7 @@ chatbotToggler.addEventListener("click", () => document.body.classList.toggle("s
 
 document.getElementById("dropdown-menu").addEventListener("change", function() {
     selectedModel = this.value; 
-    chatbox.innerHTML = ""; // Clearing the inner HTML removes all chat messages
+    chatbox.innerHTML = ""; 
     const initialMessage = "Hi there, Unibot here... \nHow can I help you today?";
     const initialMessageElement = createChatLi(initialMessage, "incoming");
     chatbox.appendChild(initialMessageElement);
