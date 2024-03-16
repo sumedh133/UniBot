@@ -17,6 +17,14 @@ nlu:
     - How are you?
     - Howdy
     - whatsup
+
+- intent: greetingName
+  examples: |
+    - Hi, I'm [John](names)
+    - Hello, it's [Alice](names) here
+    - Good morning, I'm [Bob](names)
+    - Hey, my name is [Emily](names)
+
   
 - intent: goodbye
   examples: |

@@ -13,6 +13,16 @@ stories:
   - intent: goodbye
   - action: utter_goodbye
 
+- story: greet with name (greetingName)
+  steps:
+    - intent: greetingName
+      entities:
+        - names: "John"
+    - slot_was_set:
+        - user_name: "{names}"
+    - action: utter_greetingName
+
+
 - story: hod and cs dept
   steps:
   - intent: hod

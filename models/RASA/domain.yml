@@ -1,7 +1,24 @@
 version: "3.1"
 
+entities:
+  - names
+
+entity_synonyms:
+  - lookup: names
+    examples: |
+      - file: names_lookup.txt
+
+slots:
+  user_name:
+    type: text
+    mappings: 
+    - type: from_entity
+      entity: names
+
+
 intents:
   - greeting
+  - greetingName
   - goodbye
   - creator
   - name
@@ -47,6 +64,10 @@ responses:
   - text: "Hello!"
   - text: "Good to see you again!"
   - text: "Hi there, how can I help?"
+
+  utter_greetingName:
+  - text: "Hello, {user_name}! Nice to meet you. How can I assist you today?"
+
 
   utter_goodbye:
   - text: "Sad to see you go :("
