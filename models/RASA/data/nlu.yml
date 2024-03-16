@@ -272,12 +272,7 @@ nlu:
     - branches available in UNI?
     - can you tell me the courses available in UNI?
     - can you tell me the branches available in UNI?
-    - computer engineering?
     - computer
-    - Computer engineering?
-    - it
-    - IT
-    - Information Technology
     - AI/Ml
     - Mechanical engineering
     - Chemical engineering
@@ -297,15 +292,12 @@ nlu:
     - leaning of course offered
     - branches useable in UNI?
     - what are the course offered in your college?
-    - reckoner
     - what are class in UNI?
     - list of course
     - Chemical substance engineering
     - what are courses in UNI?
     - Mechanical engineering science
-    - data processor
     - form offered
-    - Civil engine room
     - what are path in UNI?
     - what be the track in UNI?
     - AI / Mil
@@ -313,7 +305,6 @@ nlu:
     - can you tell maine the branches usable in UNI?
     - what are the form in UNI?
     - Computer technology?
-    - information technology
     - courses declare oneself in (your univrsity (UNI) figure )
     - computer engineering science?
     - row you offer
@@ -331,7 +322,6 @@ nlu:
     - what constitute the courses offered in your college?
     - courses offer
     - path?
-    - ramification?
     - course useable at UNI?
     - offshoot available in UNI?
     - bradypus tridactylus / Ml
@@ -863,7 +853,8 @@ nlu:
 - examples: |
     - Who is HOD
     - Where is HOD
-    - it hod
+    - it 
+    - information technology
     - name of it hod
     - information technology hod
     - it hod
@@ -879,10 +870,12 @@ nlu:
     - Who is computer HOD
     - Where is computer HOD
     - computer hod
+    - cs
+    - computer science
     - name of computer hod
     - Who be information processing system HOD
     - computer hod
-    - name of computing machine hod
+    - name of computier science hod
     - name of data processor hod
     - name of computer hod
     - World health organization is computer HOD
@@ -894,11 +887,13 @@ nlu:
 - examples: |
     - Who is extc HOD
     - Where is  extc HOD
+    - extc
+    - entc
+    - electronics and telecommunications
     - extc hod
     - name of extc hod
     - Who constitute extc HOD
     - name of extc hod
-    - World health organization is extc HOD
     - Who is extc HOD
     - extc hod
     - Where comprise extc HOD
@@ -1421,15 +1416,17 @@ nlu:
   
 - intent: hod
   examples: |
-    - hod
-    - hod name
-    - who is the hod
-    - hod
-    - world health organization make up the hod
-    - who be the hod
-    - who comprise the hod
-    - hod figure
-    - hod name
-    - hod epithet
+    - hods
+    - tell me about college hods
+    - heads of various departments of college 
+    - who are the college hods
+    - heads of departments
+
+- intent: cs
+  examples: |
+    - cs
+    - computer science
+    - tell me about computer science
+    - does the uni offer computer science
   
 

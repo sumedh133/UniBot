@@ -13,10 +13,36 @@ stories:
   - intent: goodbye
   - action: utter_goodbye
 
+- story: hod and cs dept
+  steps:
+  - intent: hod
+  - action: utter_hod
+  - intent: computerhod
+  - action: utter_computerhod
+
+- story: hod and it dept
+  steps:
+  - intent: hod
+  - action: utter_hod
+  - intent: ithod
+  - action: utter_ithod
+
+- story: hod and entc dept
+  steps:
+  - intent: hod
+  - action: utter_hod
+  - intent: extchod
+  - action: utter_extchod
+
 - story: Course Information Inquiry
   steps:
     - intent: course
     - action: utter_course
+
+- story: Computer Science
+  steps:
+    - intent: cs
+    - action: utter_cs
 
 - story: Admission Process Query
   steps:
@@ -43,10 +69,6 @@ stories:
     - intent: random
     - action: utter_random
 
-- story: HOD Information Inquiry
-  steps:
-    - intent: ithod
-    - action: utter_ithod
 
 - story: Principal Information Inquiry
   steps:

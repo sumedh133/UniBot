@@ -32,4 +32,4 @@ def get_bert_response():
     return jsonify(response=response) 
 
 if __name__ == '__main__':
-    app.run(debug=True)  # Run the Flask app
+    app.run(debug=True)  

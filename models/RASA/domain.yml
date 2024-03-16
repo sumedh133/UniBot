@@ -39,6 +39,7 @@ intents:
   - task
   - ragging
   - hod
+  - cs
 
 
 responses:
@@ -106,13 +107,13 @@ responses:
   - text: "To know about placement, visit [here](PLACEMENT INFORMATION LINK FROM YOUR UNIVERSITY WEBSITE IF THEY HAVE)."
 
   utter_ithod:
-  - text: "All engineering departments have only one HOD, XYZ, who is available at (Place name)."
+  - text: "All engineering departments have only one HOD, XYZIT is information technology hod"
 
   utter_computerhod:
-  - text: "All engineering departments have only one HOD, XYZ, who is available at (PLACE NAME)."
+  - text: "All engineering departments have only one HOD, XYZCS is computer science hod."
 
   utter_extchod:
-  - text: "Different school-wise HODs are different. So be more clear with your school or department."
+  - text: "All engineering departments have only one HOD, XYZEXTC is electronics hod"
 
   utter_principal:
   - text: "XYZ is the college principal. If you need any help, then call your branch HOD first. That is more appropriate."
@@ -160,7 +161,10 @@ responses:
   - text: "We are proud to tell you that our college provides a ragging-free environment, and we have strict rules against ragging."
 
   utter_hod:
-  - text: "HODs differ for each branch. Please be more specific like: (HOD it)."
+  - text: "HODs differ for each branch. Please be specify your branch:"
+
+  utter_cs:
+  - text: "Computer Science is one of our leading courses"
 
 
 
