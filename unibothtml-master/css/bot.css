@@ -30,10 +30,11 @@ body {
 .chatbot .header-left {
   display: flex;
   margin-left: 10px;
-  
-  
+  top: 100px;
 }
-.chatbot .header-left .dropdown-menu {
+#dropdown-menu{
+  
+  border-radius: 5px;
   background-color: rgb(25, 83, 111);
 }
 #chat{
@@ -83,11 +84,14 @@ body.show-chatbot .chatbot-toggler span:last-child {
 }
 body.show-chatbot .chatbot {
   opacity: 1;
+  right: 10px;
+  bottom: 10px;
   pointer-events: auto;
   transform: scale(1);
 }
 .chatbot header {
-  padding: 16px 0;
+  padding-bottom: 15px;
+  padding-top: 10px;
   position: relative;
   text-align: center;
   color: #cc0707;
@@ -179,11 +183,10 @@ header h2 {
   align-items: center;
 }
 
-.reset-btn {
-  margin-left: 10px; /* Adjust the margin as needed */
-  padding: 5px 10px; /* Adjust padding as needed */
-  background-color: #f0f0f0; /* Adjust background color as needed */
+.reset-btn { /* Adjust the margin as needed */
+  background-color: lightblue; /* Adjust background color as needed */
   border: none;
+  scale:1.2;
   border-radius: 5px;
   cursor: pointer;
 }

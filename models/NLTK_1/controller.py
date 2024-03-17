@@ -46,6 +46,7 @@ def respond(ints, intents_json):
         if(i['tag']== tag):
             result = random.choice(i['responses'])
             break
+    
     return result
 
 def get_response(text):

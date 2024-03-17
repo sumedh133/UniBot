@@ -13,6 +13,8 @@ def get_nltk_response():
     data = request.json
     message = data.get('message')
     response = get_response_nltk(message)
+    if "Mind Reader" in response:   
+        response=response.replace("Mind Reader","Unibot")
     return jsonify(response=response)
 
 @app.route('/HYBRID', methods=['POST'])
